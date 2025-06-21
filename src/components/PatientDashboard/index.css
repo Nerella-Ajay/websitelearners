@@ -1,0 +1,304 @@
+/* --- Overall Patient Dashboard Layout --- */
+.patient-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+  padding: 1.5rem; /* Equivalent to overall padding in the layout */
+}
+
+/* --- Welcome Section --- */
+.welcome-section-card {
+  background: linear-gradient(to right, #3b82f6, #22c55e); /* bg-gradient-to-r from-blue-500 to-green-500 */
+  border-radius: 1rem; /* rounded-2xl */
+  padding: 2rem; /* p-8 */
+  color: white; /* text-white */
+}
+
+.welcome-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* gap-4 */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.welcome-avatar-wrapper {
+  width: 4rem; /* w-16 */
+  height: 4rem; /* h-16 */
+  background-color: rgba(255, 255, 255, 0.2); /* bg-white/20 */
+  border-radius: 0.75rem; /* rounded-xl */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-avatar-icon {
+  width: 2rem; /* w-8 */
+  height: 2rem; /* h-8 */
+  color: white; /* Lucide icons inherit parent color by default, but explicitly set if needed */
+}
+
+.welcome-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  margin: 0; /* Remove default h2 margin */
+}
+
+.welcome-subtitle {
+  color: rgba(255, 255, 255, 0.9); /* text-white/90 */
+  font-size: 1.125rem; /* text-lg */
+  margin: 0; /* Remove default p margin */
+}
+
+.welcome-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* grid-cols-1 */
+  gap: 1rem; /* gap-4 */
+  margin-top: 1.5rem; /* mt-6 */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .welcome-stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* md:grid-cols-3 */
+  }
+}
+
+.stat-item {
+  background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 1rem; /* p-4 */
+  /* backdrop-filter: blur(8px); /* backdrop-blur-sm - requires specific browser support */
+  text-align: center; /* Center content within stat item */
+}
+
+.stat-value {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.8); /* text-white/80 */
+}
+
+/* --- Main Dashboard Grid Layout --- */
+.dashboard-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* Default to single column */
+  gap: 1.5rem; /* gap-6 */
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .dashboard-grid-layout {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* lg:grid-cols-3 */
+  }
+}
+
+.medication-section-wrapper {
+  /* No specific styles needed for wrapper, unless for padding or margin */
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .medication-section-wrapper {
+    grid-column: span 2 / span 2; /* lg:col-span-2 */
+  }
+}
+
+.calendar-section-wrapper {
+  /* No specific styles needed for wrapper */
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* --- Card Styling (Applied to custom-card, custom-card-header, custom-card-title, custom-card-content) --- */
+.dashboard-card { /* Applied to Custom Card component */
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-sm */
+  border: 1px solid #e2e8f0; /* border */
+  height: fit-content; /* h-fit */
+  margin: 10px;
+  padding: 10px;
+}
+
+.dashboard-card-header { /* Applied to Custom CardHeader component */
+  padding: 1rem 1.5rem; /* px-6 py-5 */
+  border-bottom: 1px solid #e2e8f0; /* border-b */
+}
+
+.dashboard-card-title { /* Applied to Custom CardTitle component */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  line-height: 1.75rem; /* leading-7 */
+  margin: 0; /* Remove default h3 margin */
+}
+
+.dashboard-card-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+  font-size: 1.5rem; /* text-2xl */
+}
+
+.dashboard-card-content { /* Applied to Custom CardContent component */
+  padding: 1.5rem; /* p-6 */
+}
+
+.dashboard-icon-blue {
+  width: 1.5rem; /* w-6 */
+  height: 1.5rem; /* h-6 */
+  color: #2563eb; /* text-blue-600 */
+}
+
+/* --- Custom Calendar Styling (Applied to your CustomCalendar component and its internal elements) --- */
+.custom-calendar { /* Applied to Custom Calendar component */
+  width: 100%; /* w-full */
+  font-size: 0.875rem; /* text-sm */
+  padding: 1rem; /* Adjust padding as needed for overall calendar spacing */
+}
+
+.custom-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.custom-calendar-month-title {
+  font-weight: 500;
+  color: #020617; /* text-foreground */
+  font-size: 1rem;
+  margin: 0; /* Remove default h4 margin */
+}
+
+.custom-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem; /* small gap between days */
+  text-align: center;
+}
+
+.custom-calendar-weekday {
+  padding: 0.5rem 0;
+  font-weight: 500;
+  color: #71717a; /* text-muted-foreground */
+}
+
+.custom-calendar-day { /* Applied to each day div in your CustomCalendar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem; /* Fixed width for consistent day boxes */
+  height: 2.25rem; /* Fixed height */
+  border-radius: 0.375rem; /* rounded-md */
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  position: relative; /* For dots/icons */
+}
+
+.custom-calendar-day.empty { /* For empty leading/trailing days */
+  visibility: hidden;
+}
+
+.custom-calendar-day:hover:not(.custom-calendar-selected-day) {
+  background-color: #f1f5f9; /* hover:bg-accent */
+  color: #0f172a; /* hover:text-accent-foreground */
+}
+
+/* Class applied by your Calendar's modifiersClassNames.selected */
+.custom-calendar-selected-day {
+  background-color: #2563eb; /* bg-blue-600 */
+  color: white; /* text-white */
+}
+
+.custom-calendar-selected-day:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+/* Class applied by your Calendar's is-today modifier */
+.custom-calendar-day.is-today {
+    background-color: #dbeafe; /* bg-blue-100 */
+    border: 1px solid #93c5fd; /* border-blue-300 */
+}
+
+.custom-calendar-day.is-today span {
+    color: #2563eb; /* text-blue-600 */
+    font-weight: 600;
+}
+
+
+/* Calendar Day Content Wrapper (for items within the day cell, not the cell itself) */
+.calendar-day-content-wrapper {
+  position: relative; /* For dots/icons */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem; /* text-sm */
+}
+
+.calendar-day-content-wrapper > span { /* Default text color for days */
+  color: #020617; /* text-foreground */
+}
+
+
+/* Calendar Day Dots/Icons */
+.calendar-dot-icon {
+  position: absolute;
+  top: -0.25rem; /* -top-1 */
+  right: -0.25rem; /* -right-1 */
+  width: 1rem; /* w-4 */
+  height: 1rem; /* h-4 */
+  border-radius: 50%; /* rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-taken-dot {
+  background-color: #22c55e; /* bg-green-500 */
+}
+
+.calendar-dot-check-icon {
+  width: 0.5rem; /* w-2 */
+  height: 0.5rem; /* h-2 */
+  color: white; /* text-white */
+}
+
+.calendar-missed-dot {
+  background-color: #ef4444; /* bg-red-400 */
+}
+
+/* --- Calendar Legend --- */
+.calendar-legend-container {
+  margin-top: 1rem; /* mt-4 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* space-y-2 */
+  font-size: 0.875rem; /* text-sm */
+  color: #020617; /* text-foreground */
+}
+
+.calendar-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.legend-color-box {
+  width: 0.75rem; /* w-3 */
+  height: 0.75rem; /* h-3 */
+  border-radius: 50%; /* rounded-full */
+}
+
+.green-box {
+  background-color: #22c55e; /* bg-green-500 */
+}
+
+.red-box {
+  background-color: #ef4444; /* bg-red-400 */
+}
+
+.blue-box {
+  background-color: #2563eb; /* bg-blue-500 */
+}

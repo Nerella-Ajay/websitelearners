@@ -1,0 +1,704 @@
+/* --- General Layout and Spacing --- */
+.caretaker-dashboard-layout {
+  padding: 2rem; /* space-y-6 */
+  max-width: 1280px; /* Equivalent to a max-width for content */
+  margin: 0 auto; /* Center the layout */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: #1a202c; /* Default text color */
+  background-color: #f0f2f5;
+}
+
+/* Margin between main sections (simulating space-y-6) */
+.caretaker-dashboard-layout > div + div {
+  margin-top: 1.5rem; /* For direct children that act as blocks */
+}
+.dashboard-tabs {
+    margin-top: 1.5rem; /* Ensures gap after header */
+}
+
+/* --- Custom Card Components --- */
+.custom-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-sm */
+}
+
+.custom-card-header {
+  padding: 1.5rem; /* p-6 */
+  border-bottom: 1px solid #e2e8f0; /* border-b */
+}
+
+.custom-card-title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #1a202c;
+}
+
+.custom-card-content {
+  padding: 1.5rem; /* p-6 */
+}
+
+/* --- Custom Button Components --- */
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.custom-button-default {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+.custom-button-default:hover {
+  background-color: #2d3748;
+}
+
+.custom-button-outline {
+  background-color: transparent;
+  border: 1px solid #e2e8f0; /* border */
+  color: #1a202c;
+}
+.custom-button-outline:hover {
+  background-color: #f7fafc; /* hover:bg-gray-50 */
+}
+
+/* Specific button icons */
+.button-icon-mr {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+
+
+/* --- Custom Badge Components --- */
+.custom-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px; /* rounded-full */
+  padding: 0.25rem 0.75rem; /* px-3 py-1 */
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 500; /* font-medium */
+  line-height: 1;
+}
+
+.custom-badge-default {
+  background-color: #f1f5f9; /* bg-gray-100 */
+  color: #475569; /* text-gray-700 */
+}
+
+.custom-badge-secondary {
+  background-color: #e2e8f0; /* bg-gray-200 */
+  color: #4a5568; /* text-gray-800 */
+}
+
+.custom-badge-destructive {
+  background-color: #fee2e2; /* bg-red-100 */
+  color: #ef4444; /* text-red-500 */
+}
+
+.custom-badge-outline {
+  background-color: transparent;
+  border: 1px solid #e2e8f0;
+  color: #1a202c;
+}
+
+/* Badge icon spacing */
+.badge-icon-mr {
+    width: 0.75rem; /* w-3 */
+    height: 0.75rem; /* h-3 */
+    margin-right: 0.25rem; /* mr-1 */
+}
+
+/* --- Custom Tabs Components --- */
+.custom-tabs-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* grid-cols-4 */
+  width: 100%; /* w-full */
+  background-color: #f1f5f9; /* bg-gray-100 */
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 0.25rem; /* p-1 */
+  margin-bottom: 1.5rem; /* space-y-6 equivalent */
+}
+
+.custom-tabs-trigger {
+  flex: 1;
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  color: #64748b; /* text-muted-foreground */
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  position: relative; /* For the active indicator */
+  z-index: 1;
+}
+
+.custom-tabs-trigger:hover {
+  color: #1a202c; /* text-foreground */
+}
+
+.custom-tabs-trigger.active {
+  background-color: #ffffff; /* bg-background */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-sm */
+  color: #1a202c; /* text-foreground */
+  z-index: 2; /* To appear above others */
+}
+
+.custom-tabs-content {
+  margin-top: 1.5rem; /* space-y-6 */
+}
+
+/* --- Custom Progress Component --- */
+.custom-progress {
+  width: 100%;
+  height: 0.75rem; /* h-3 */
+  background-color: #e2e8f0; /* bg-secondary */
+  border-radius: 9999px; /* rounded-full */
+  overflow: hidden;
+}
+
+.custom-progress-indicator {
+  height: 100%;
+  background-color: #22c55e; /* bg-primary (green) */
+  border-radius: inherit;
+  transition: width 0.3s ease-in-out;
+}
+
+/* --- Custom Calendar Component --- */
+.custom-calendar {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.custom-calendar-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.custom-calendar-month-title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+}
+
+.custom-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem; /* gap-1 */
+  text-align: center;
+}
+
+.custom-calendar-weekday {
+  font-size: 0.75rem; /* text-xs */
+  color: #64748b; /* text-muted-foreground */
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+
+.custom-calendar-day {
+  padding: 0.5rem;
+  border-radius: 0.375rem; /* rounded-md */
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  position: relative;
+  height: 2.5rem; /* fixed height for consistent look */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a202c;
+}
+
+.custom-calendar-day.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
+.custom-calendar-day:not(.empty):hover {
+  background-color: #f1f5f9; /* bg-accent */
+}
+
+.custom-calendar-day.is-today {
+  border: 2px solid #3b82f6; /* border-2 border-blue-500 */
+}
+
+.custom-calendar-day.is-selected {
+  background-color: #3b82f6; /* bg-blue-600 */
+  color: #ffffff; /* text-white */
+}
+
+.custom-calendar-day.is-selected:hover {
+  background-color: #2563eb; /* hover:bg-blue-700 */
+}
+
+/* Calendar day content for indicators */
+.calendar-day-content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-taken-indicator {
+  position: absolute;
+  top: -0.25rem; /* -top-1 */
+  right: -0.25rem; /* -right-1 */
+  width: 1rem; /* w-4 */
+  height: 1rem; /* h-4 */
+  background-color: #22c55e; /* bg-green-500 */
+  border-radius: 9999px; /* rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-check-icon {
+  width: 0.5rem; /* w-2 */
+  height: 0.5rem; /* h-2 */
+  color: #ffffff; /* text-white */
+}
+
+.calendar-missed-indicator {
+  position: absolute;
+  top: -0.25rem; /* -top-1 */
+  right: -0.25rem; /* -right-1 */
+  width: 1rem; /* w-4 */
+  height: 1rem; /* h-4 */
+  background-color: #fb7185; /* bg-red-400 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+/* Calendar legend */
+.calendar-legend {
+  margin-top: 1rem; /* mt-4 */
+  padding-left: 1rem; /* for aesthetic alignment */
+}
+
+.calendar-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+  font-size: 0.875rem; /* text-sm */
+  color: #64748b; /* text-muted-foreground */
+  margin-bottom: 0.5rem; /* space-y-2 */
+}
+
+.legend-bullet-green {
+  width: 0.75rem; /* w-3 */
+  height: 0.75rem; /* h-3 */
+  background-color: #22c55e; /* bg-green-500 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+.legend-bullet-red {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #fb7185; /* bg-red-400 */
+  border-radius: 9999px;
+}
+
+.legend-bullet-blue {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #3b82f6; /* bg-blue-500 */
+  border-radius: 9999px;
+}
+
+
+/* --- Caretaker Dashboard Specific Styles --- */
+
+/* Header Section */
+.dashboard-header-bg {
+  background: linear-gradient(to right, #22c55e, #3b82f6); /* from-green-500 to-blue-500 */
+  border-radius: 1rem; /* rounded-2xl */
+  padding: 2rem; /* p-8 */
+  color: #ffffff; /* text-white */
+  margin-bottom: 1.5rem; /* space-y-6 */
+}
+
+.dashboard-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* gap-4 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.dashboard-header-icon-wrapper {
+  width: 4rem; /* w-16 */
+  height: 4rem; /* h-16 */
+  background-color: rgba(255, 255, 255, 0.2); /* bg-white/20 */
+  border-radius: 0.75rem; /* rounded-xl */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-header-icon {
+  width: 2rem; /* w-8 */
+  height: 2rem; /* h-8 */
+}
+
+.dashboard-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+}
+
+.dashboard-subtitle {
+  color: rgba(255, 255, 255, 0.9); /* text-white/90 */
+  font-size: 1.125rem; /* text-lg */
+}
+
+.dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* grid-cols-1 */
+  gap: 1rem; /* gap-4 */
+}
+
+@media (min-width: 768px) { /* md:grid-cols-4 */
+  .dashboard-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.dashboard-stat-card {
+  background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 1rem; /* p-4 */
+  backdrop-filter: blur(4px); /* backdrop-blur-sm */
+  color: #ffffff; /* Ensure stat cards inherit white text */
+}
+
+.stat-value {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.8); /* text-white/80 */
+}
+
+/* --- Tabs Content Specific Styles --- */
+.dashboard-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to single column */
+  gap: 1.5rem; /* gap-6 */
+}
+@media (min-width: 1024px) { /* lg:grid-cols-2 */
+  .dashboard-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Today's Status Card */
+.card-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.card-icon-blue {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+  color: #2563eb; /* text-blue-600 */
+}
+
+.daily-medication-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem; /* p-3 */
+  background-color: #f8fafc; /* bg-accent/50 */
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+.medication-name {
+  font-weight: 500; /* font-medium */
+}
+
+.medication-time {
+  font-size: 0.875rem; /* text-sm */
+  color: #64748b; /* text-muted-foreground */
+}
+
+/* Quick Actions Card */
+.quick-actions-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* space-y-3 */
+}
+
+.quick-action-button {
+  width: 100%; /* w-full */
+  justify-content: flex-start; /* justify-start */
+}
+
+/* Adherence Progress Card */
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* space-y-4 */
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem; /* text-sm */
+}
+
+.progress-bar-thin {
+  height: 0.75rem; /* h-3 */
+}
+
+.progress-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* grid-cols-3 */
+  gap: 1rem; /* gap-4 */
+  text-align: center;
+  font-size: 0.875rem; /* text-sm */
+}
+
+.stat-value-green {
+  font-weight: 500;
+  color: #16a34a; /* text-green-600 */
+}
+
+.stat-value-red {
+  font-weight: 500;
+  color: #dc2626; /* text-red-600 */
+}
+
+.stat-value-blue {
+  font-weight: 500;
+  color: #2563eb; /* text-blue-600 */
+}
+
+.stat-label-muted {
+  color: #64748b; /* text-muted-foreground */
+}
+
+/* Recent Activity Tab */
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* space-y-4 */
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem; /* p-4 */
+  border: 1px solid #e2e8f0; /* border */
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+.activity-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+}
+
+.activity-icon-wrapper {
+  width: 2.5rem; /* w-10 */
+  height: 2.5rem; /* h-10 */
+  border-radius: 9999px; /* rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-icon-green {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+  color: #16a34a; /* text-green-600 */
+}
+
+.activity-icon-red {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+  color: #dc2626; /* text-red-600 */
+}
+
+.activity-date {
+  font-weight: 500; /* font-medium */
+}
+
+.activity-time-status {
+  font-size: 0.875rem; /* text-sm */
+  color: #64748b; /* text-muted-foreground */
+}
+
+.activity-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+}
+
+/* Calendar View Tab */
+.calendar-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to single column */
+  gap: 1.5rem; /* gap-6 */
+}
+@media (min-width: 1024px) { /* lg:grid-cols-2 */
+  .calendar-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.full-width-calendar {
+    width: 100%;
+}
+
+.calendar-display-section {
+    /* Styles for the container of the calendar and its legend */
+}
+
+.calendar-details-section {
+    /* Styles for the container of the date details */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 25px;
+}
+
+.calendar-details-title {
+    font-weight: 500; /* font-medium */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.calendar-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 */
+}
+
+.details-card-base {
+    padding: 1rem; /* p-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    border: 1px solid;
+}
+
+.details-card-header-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* gap-2 */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Specific details cards */
+.details-card-taken {
+    background-color: #f0fdf4; /* bg-green-50 */
+    border-color: #bbf7d0; /* border-green-200 */
+}
+.details-card-icon-green {
+    width: 1.25rem; /* w-5 */
+    height: 1.25rem; /* h-5 */
+    color: #16a34a; /* text-green-600 */
+}
+.details-card-title-green {
+    font-weight: 500;
+    color: #0c612b; /* text-green-800 */
+}
+.details-card-description-green {
+    font-size: 0.875rem; /* text-sm */
+    color: #15803d; /* text-green-700 */
+}
+
+.details-card-missed {
+    background-color: #fef2f2; /* bg-red-50 */
+    border-color: #fecaca; /* border-red-200 */
+}
+.details-card-icon-red {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #dc2626; /* text-red-600 */
+}
+.details-card-title-red {
+    font-weight: 500;
+    color: #991b1b; /* text-red-800 */
+}
+.details-card-description-red {
+    font-size: 0.875rem;
+    color: #b91c1c; /* text-red-700 */
+}
+
+.details-card-today {
+    background-color: #eff6ff; /* bg-blue-50 */
+    border-color: #bfdbfe; /* border-blue-200 */
+}
+.details-card-icon-blue {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #2563eb; /* text-blue-600 */
+}
+.details-card-title-blue {
+    font-weight: 500;
+    color: #1e40af; /* text-blue-800 */
+}
+.details-card-description-blue {
+    font-size: 0.875rem;
+    color: #1d4ed8; /* text-blue-700 */
+}
+
+.details-card-future {
+    background-color: #f9fafb; /* bg-gray-50 */
+    border-color: #e5e7eb; /* border-gray-200 */
+}
+.details-card-icon-gray {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #4b5563; /* text-gray-600 */
+}
+.details-card-title-gray {
+    font-weight: 500;
+    color: #374151; /* text-gray-800 */
+}
+.details-card-description-gray {
+    font-size: 0.875rem;
+    color: #4b5563; /* text-gray-700 */
+}
+
+
+/* Notification Settings Card (for NotificationSettings.js) */
+.notification-settings-card {
+    /* If NotificationSettings uses CustomCard, these styles will apply. */
+    /* Add any specific styles for NotificationSettings here */
+}
+
+.notification-option {
+    margin-bottom: 1rem; /* space-y-4 */
+}
+
+.notification-label {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #1a202c;
+    cursor: pointer;
+}
+
+.notification-checkbox {
+    margin-right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    accent-color: #2563eb; /* A default color for checkboxes */
+}
+
+.notification-option p {
+    font-size: 0.75rem; /* text-xs */
+    color: #64748b; /* text-muted-foreground */
+    margin-left: 1.5rem; /* ml-6 */
+    margin-top: 0.25rem; /* small margin to separate from label */
+}

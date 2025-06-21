@@ -1,0 +1,254 @@
+/* --- Global Container --- */
+.notification-settings-container {
+  padding: 1.5rem; /* Overall padding around the dashboard */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Spacing between cards/sections */
+}
+
+/* --- Card Styling --- */
+.card {
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-sm */
+  border: 1px solid #e2e8f0; /* border */
+}
+
+.card-header {
+  padding: 1.25rem 1.5rem; /* px-6 py-5 */
+  border-bottom: 1px solid #e2e8f0; /* border-b */
+}
+
+.card-title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  line-height: 1.75rem; /* leading-7 */
+}
+
+.card-content {
+  padding: 1.5rem; /* p-6 */
+}
+
+.card-title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.card-icon-blue {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+  color: #2563eb; /* text-blue-600 */
+}
+
+.card-icon-green {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+  color: #16a34a; /* text-green-600 */
+}
+
+.card-content-spacing {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+}
+
+/* --- Setting Sections --- */
+.setting-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* space-y-4 */
+}
+
+.setting-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.setting-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem; /* space-y-0.5 */
+}
+
+.setting-label {
+  font-size: 1rem; /* text-base */
+  font-weight: 500; /* font-medium */
+  color: #020617; /* text-foreground */
+}
+
+.setting-description {
+  font-size: 0.875rem; /* text-sm */
+  color: #71717a; /* text-muted-foreground */
+}
+
+.setting-details-indent {
+  margin-left: 1.5rem; /* ml-6 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* space-y-3 */
+}
+
+.label-style {
+  display: block;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  color: #020617; /* text-foreground */
+  margin-bottom: 0.25rem; /* Space between label and input */
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem 0.75rem; /* py-2 px-3 */
+  border: 1px solid #e2e8f0; /* border-input */
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; /* text-sm */
+  color: #020617; /* text-foreground */
+  background-color: #ffffff; /* bg-background */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #2563eb; /* focus:ring-ring focus:ring-2 */
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2); /* ring-offset-background */
+}
+
+.select-field {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: #020617;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none; /* Remove default arrow on WebKit browsers */
+  -moz-appearance: none;    /* Remove default arrow on Firefox */
+  appearance: none;         /* Remove default arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+}
+
+.select-field:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.input-helper-text {
+  font-size: 0.75rem; /* text-xs */
+  color: #71717a; /* text-muted-foreground */
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+/* --- Separator --- */
+.separator {
+  border: none; /* Remove default browser styling */
+  border-top: 1px solid #e2e8f0; /* border-border color */
+  margin: 1.5rem 0; /* Add vertical spacing */
+}
+
+.switch-container {
+  position: relative;
+  display: inline-block;
+  width: 2.5rem; /* 40px - w-10 */
+  height: 1.5rem; /* 24px - h-6 */
+  cursor: pointer;
+}
+
+.switch-input {
+  opacity: 0; /* Hide default checkbox */
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e1; /* gray-300 - bg-input */
+  border-radius: 1.5rem; /* rounded-full */
+  transition: 0.4s;
+}
+
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 1rem; /* 16px - h-4 */
+  width: 1rem; /* 16px - w-4 */
+  left: 0.25rem; /* 4px - translate-x-0 */
+  bottom: 0.25rem; /* 4px - translate-y-0 */
+  background-color: white; /* bg-background */
+  border-radius: 50%; /* rounded-full */
+  transition: 0.4s;
+}
+
+/* Checked state */
+.switch-input:checked + .switch-slider {
+  background-color: #2563eb; /* blue-600 - bg-primary */
+}
+
+.switch-input:focus + .switch-slider {
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5); /* focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 */
+}
+
+.switch-input:checked + .switch-slider:before {
+  transform: translateX(1rem); /* 16px - translate-x-4 */
+}
+
+/* --- Email Preview --- */
+.email-preview-box {
+  background-color: #f8fafc; /* bg-gray-50 */
+  padding: 1rem; /* p-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid #e2e8f0; /* border */
+}
+
+.email-preview-content {
+  font-size: 0.875rem; /* text-sm */
+}
+
+.email-preview-subject {
+  font-weight: 500; /* font-medium */
+  margin-bottom: 0.5rem; /* mb-2 */
+  color: #020617; /* text-foreground */
+}
+
+.email-preview-body {
+  color: #71717a; /* text-muted-foreground */
+}
+
+.mb-paragraph {
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* --- Save Button --- */
+.save-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-button {
+  background-color: #16a34a; /* bg-green-600 */
+  color: white; /* text-white */
+  padding: 0.625rem 1rem; /* py-2.5 px-4, adjusted for example */
+  border-radius: 0.375rem; /* rounded-md */
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.save-button:hover {
+  background-color: #15803d; /* hover:bg-green-700 */
+}

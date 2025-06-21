@@ -1,0 +1,34 @@
+.not-found-container {
+  min-height: 100vh; /* Make sure it takes full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6; /* Equivalent to bg-gray-100 */
+  font-family: Arial, sans-serif; /* A common sans-serif font */
+}
+
+.not-found-content {
+  text-align: center;
+}
+
+.not-found-title {
+  font-size: 3rem; /* Equivalent to text-4xl */
+  font-weight: bold; /* Equivalent to font-bold */
+  margin-bottom: 1rem; /* Equivalent to mb-4 (assuming 1rem = 16px, so 16px * 4 = 64px, which is a bit large, let's use 1rem for reasonable spacing) */
+}
+
+.not-found-message {
+  font-size: 1.25rem; /* Equivalent to text-xl */
+  color: #4b5563; /* Equivalent to text-gray-600 */
+  margin-bottom: 1rem; /* Equivalent to mb-4 */
+}
+
+.not-found-link {
+  color: #3b82f6; /* Equivalent to text-blue-500 */
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out; /* For hover effect */
+}
+
+.not-found-link:hover {
+  color: #2563eb; /* Equivalent to hover:text-blue-700 */
+}

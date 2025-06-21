@@ -1,0 +1,252 @@
+/* src/components/MedicationTracker/index.css */
+
+/* --- Overall Medication Tracker Container --- */
+.medication-tracker-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* For space-y-6, space-y-4 is handled by different parent in JS */
+}
+
+/* --- Taken State: Success Message --- */
+.taken-success-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem; /* p-8 */
+  background-color: #f0fdf4; /* bg-green-50 */
+  border-radius: 0.75rem; /* rounded-xl */
+  border: 2px solid #bbf7d0; /* border-2 border-green-200 */
+  text-align: center;
+}
+
+.taken-success-icon-wrapper {
+  width: 4rem; /* w-16 */
+  height: 4rem; /* h-16 */
+  background-color: #22c55e; /* bg-green-500 */
+  border-radius: 50%; /* rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto; /* mx-auto mb-4 */
+}
+
+.taken-success-icon {
+  width: 2rem; /* w-8 */
+  height: 2rem; /* h-8 */
+  color: white; /* text-white */
+}
+
+.taken-success-title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #166534; /* text-green-800 */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.taken-success-message {
+  color: #22c55e; /* text-green-600 */
+  font-size: 1rem; /* default text size */
+}
+
+/* --- Taken State: Medication Details Card (specifics) --- */
+.medication-details-card.taken-card {
+  border-color: #bbf7d0; /* border-green-200 */
+  background-color: rgba(240, 253, 244, 0.5); /* bg-green-50/50 */
+}
+
+.medication-details-card .medication-details-content { /* Applied to CardContent div */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem; /* p-4 */
+}
+
+.medication-item-icon-wrapper.taken-icon-bg {
+  background-color: #22c55e; /* bg-green-500 */
+}
+
+.medication-item-icon {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+  color: white; /* text-white */
+}
+
+.medication-item-name.taken-text-strong {
+  color: #166534; /* text-green-800 */
+}
+
+.medication-item-description.taken-text-muted {
+  color: #22c55e; /* text-green-600 */
+}
+
+.medication-item-badge.taken-badge {
+  background-color: #dcfce7; /* bg-green-100 */
+  color: #166534; /* text-green-800 */
+}
+
+/* --- Pending State: Medication Details Card (specifics) --- */
+.medication-details-card.pending-card {
+  transition: box-shadow 0.2s ease-in-out; /* transition-shadow */
+}
+
+.medication-details-card.pending-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* hover:shadow-md */
+}
+
+.medication-item-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+}
+
+.medication-item-number-wrapper,
+.medication-item-icon-wrapper { /* Shared styles for circular icons/numbers */
+  width: 2.5rem; /* w-10 */
+  height: 2.5rem; /* h-10 */
+  border-radius: 50%; /* rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medication-item-number-wrapper {
+  background-color: #dbeafe; /* bg-blue-100 */
+}
+
+.medication-item-number {
+  color: #2563eb; /* text-blue-600 */
+  font-weight: 500; /* font-medium */
+}
+
+.medication-item-name {
+  font-weight: 500; /* font-medium */
+  color: #020617; /* text-foreground */
+}
+
+.medication-item-description {
+  font-size: 0.875rem; /* text-sm */
+  color: #71717a; /* text-muted-foreground */
+}
+
+.medication-item-badge.pending-badge {
+  background-color: #f1f5f9; /* bg-slate-100 */
+  color: #0f172a; /* text-slate-900 */
+  border: 1px solid #e2e8f0; /* border-input */
+  padding: 0.25rem 0.625rem; /* px-2.5 py-1 */
+  border-radius: 9999px; /* rounded-full */
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600; /* font-semibold */
+  line-height: 1; /* leading-none */
+  white-space: nowrap; /* whitespace-nowrap */
+  user-select: none; /* user-select-none */
+}
+
+.badge-icon {
+  width: 0.75rem; /* w-3 */
+  height: 0.75rem; /* h-3 */
+  margin-right: 0.25rem; /* mr-1 */
+}
+
+/* --- Image Upload Section --- */
+.image-upload-card {
+  border: 2px dashed rgba(226, 232, 240, 0.5); /* border-dashed border-2 border-border/50 */
+}
+
+.image-upload-card .image-upload-content { /* Applied to CardContent div */
+  padding: 1.5rem; /* p-6 */
+}
+
+.image-upload-icon {
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+  color: #71717a; /* text-muted-foreground */
+  margin: 0 auto 1rem auto; /* mx-auto mb-4 */
+  display: block; /* Ensures auto margins work */
+}
+
+.image-upload-title {
+  font-weight: 500; /* font-medium */
+  margin-bottom: 0.5rem; /* mb-2 */
+  color: #020617; /* text-foreground */
+  text-align: center;
+}
+
+.image-upload-description {
+  font-size: 0.875rem; /* text-sm */
+  color: #71717a; /* text-muted-foreground */
+  margin-bottom: 1rem; /* mb-4 */
+  text-align: center;
+}
+
+.file-input-hidden {
+  display: none; /* hidden */
+}
+
+.upload-photo-button { /* Applied to CustomButton component */
+  /* These styles will override or combine with custom-button-outline */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.upload-photo-icon {
+  width: 1rem; /* w-4 */
+  height: 1rem; /* h-4 */
+  margin-right: 0.5rem; /* mr-2 */
+}
+
+.image-preview-wrapper {
+  margin-top: 1rem; /* mt-4 */
+  text-align: center; /* Center image and text */
+}
+
+.image-preview {
+  max-width: 100%; /* max-w-full */
+  height: 8rem; /* h-32 */
+  object-fit: cover; /* object-cover */
+  border-radius: 0.5rem; /* rounded-lg */
+  margin: 0 auto; /* mx-auto */
+  border: 2px solid #e2e8f0; /* border-2 border-border */
+  display: block; /* Ensures auto margins work */
+}
+
+.image-preview-text {
+  font-size: 0.875rem; /* text-sm */
+  color: #71717a; /* text-muted-foreground */
+  margin-top: 0.5rem; /* mt-2 */
+}
+
+/* --- Mark as Taken Button --- */
+.mark-taken-button { /* Applied to CustomButton component */
+  /* These styles will override or combine with custom-button-default */
+  width: 100%; /* w-full */
+  padding-top: 1rem; /* py-4 */
+  padding-bottom: 1rem; /* py-4 */
+  font-size: 1.125rem; /* text-lg */
+  background-color: #16a34a; /* bg-green-600 */
+}
+
+.mark-taken-button:hover:not(:disabled) {
+  background-color: #15803d; /* hover:bg-green-700 */
+}
+
+.mark-taken-button-disabled { /* Applied via className prop when disabled */
+  opacity: 0.7; /* disabled */
+  cursor: not-allowed;
+}
+
+.mark-taken-button-disabled:hover {
+  background-color: #16a34a; /* Keep original color on hover when disabled */
+}
+
+.mark-taken-icon {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+  margin-right: 0.5rem; /* mr-2 */
+}
+
+.future-date-message {
+  text-align: center; /* text-center */
+  font-size: 0.875rem; /* text-sm */
+  color: #71717a; /* text-muted-foreground */
+  margin-top: 0; /* Adjust margin if needed due to space-y-6 container */
+}
